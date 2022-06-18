@@ -1,0 +1,228 @@
+//====================================================================================================
+.header {
+   position: fixed;
+   width: 100%;
+   top: 0;
+   left: 0;
+   background: #FFFFFF;
+   box-shadow: 0px 1px 8px rgba(83, 109, 122, 0.29);
+   border-radius: 0px;
+   z-index: 50;
+   // .header__container
+   &__container {
+   }
+   // .header__menu
+   &__menu {
+   }
+}
+.menu {
+   display: flex;
+   align-items: center;
+   min-height: 85px;
+   padding: 5px 0;
+   @media (max-width: em(868)){
+      min-height: 50px;
+   }
+   // .menu__logo
+   &__logo {
+      margin-right: 30px;
+      z-index: 3;
+      @media (max-width: em(868)){
+         margin-right: 0px;
+         flex: 1 1 auto;
+      }
+   }
+   // .menu__body
+   &__body {
+      flex: 1 1 auto;
+      @media (max-width: em(868)){
+         position: fixed;
+         width: 100%;
+         height: 100%;
+         top: -100%;
+         left: 0;
+         overflow: auto;
+         background-color: #E3EBF1;
+         padding: 90px 10px 30px 10px;
+         transition: top 0.5s ease 0s;
+         &::before{
+            content:'';
+            position: fixed;
+            width: 100%;
+            height: 60px;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            background-color: #fff;
+         }
+      }
+   }
+   // .menu__list
+   &__list {
+      display: flex;
+      column-gap: 40px;
+      @include adaptiveValue("column-gap",40 ,0 );
+      @media (max-width: em(868)){
+         display: block;
+      }
+   }
+   // .menu__item
+   &__item {
+      @media (max-width: em(868)){
+         &:not(:last-child){
+            margin-bottom: 30px;
+         }
+      }
+   }
+   // .menu__link
+   &__link {
+      font-size: 16px;
+      line-height: 143%;
+      color: inherit;
+      transition: color 0.3s ease 0s;
+      img{
+         margin-right: 5px;
+      }
+      @media (any-hover: hover){
+         &:hover{
+            color: $dark-greenColor;
+         }
+      }
+      @media (max-width: em(868)){
+         font-size: 24px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+   }
+   // .menu__sing-up
+   &__sing-up {
+      position: relative;
+      padding-left: 42px;
+      transition: color 0.3s ease 0s;
+      z-index: 3;
+      @media (max-width: em(868)){
+         margin-right: 10px;
+      }
+      &::before{
+         content:'';
+         position: absolute;
+         background: url('../img/icons/header-icons/Sing Up.png');
+         height: 22px;
+         width: 32px;
+         top: -5px;
+         left: 0;
+         box-shadow: 5px 5px 0px #FEAD1C;
+         border-radius: 5px;
+      }
+      &:hover{
+         color: #FEAD1C;
+      }
+      
+   }
+}
+.menu-open{
+   .menu__body {
+         top: 0;
+   }
+}
+.icon-menu {
+	display: none;
+	@media (max-width: 868px) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 3;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+
+//====================================================================================================
+
+//Burger
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/

@@ -1,0 +1,50 @@
+// Заголовки, общие БЄМ блоки и проче...
+%title{
+   font-family: 'Bitter';
+   font-size: 30px;
+   line-height: 117%;
+}
+%title-big{
+   font-family: 'Bitter';
+   font-size: 38px;
+   line-height: 105%;
+}
+.btn{
+   display: inline-flex;
+   flex-direction: column;
+   justify-content:center;align-items: center;text-align: center;
+   background: $greenColor;
+   border-radius: 5px;
+   padding: 15px;
+   font-size: 15px;
+   line-height: 133%;
+   color: #FFFFFF;
+   transition: background 0.3s ease 0s;
+   @media (any-hover: hover){
+      &:hover{
+         background: $dark-greenColor;
+      }
+   }
+   }
+%view-all{
+   position: relative;
+   font-size: 16px;
+   line-height: 125%;
+   padding-left: 24px;
+   transition: all 0.3s ease 0s;
+   &::before{
+      content:'';
+      position: absolute;
+      background: url('../img/icons/arrow.png')no-repeat;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+   }
+   &:hover{
+      color: $greenColor;
+      &::before{
+      transform: rotate(-90deg);
+      }
+   }
+}
