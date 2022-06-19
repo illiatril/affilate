@@ -25,7 +25,25 @@
          background: $dark-greenColor;
       }
    }
-   }
+   &__search{
+      display: inline-flex;
+      flex-direction: column;
+      justify-content:center;align-items: center;text-align: center;
+      background: #768F9C;
+      border-radius: 0px 5px 5px 0px;
+      padding: 15px 20px;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 167%;
+      color: #FFFFFF;
+      transition: background 0.3s ease 0s;
+      @media (any-hover: hover){
+         &:hover{
+            background: #556269;
+         }
+      }
+}
+}
 %view-all{
    position: relative;
    font-size: 16px;
